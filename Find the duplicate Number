@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int findDuplicate(vector<int>& nums) {
+        int res;
+        unordered_map<long int, int> freq;
+        for(int i=0;i<nums.size();i++)
+            freq[nums[i]]++;
+        for (auto& entry : freq) {
+            if (entry.second > 1)
+                res = entry.first;
+        }
+
+        return res;
+    }
+};
